@@ -1,0 +1,103 @@
+* {
+    font-family: sans-serif;
+    user-select: none;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'BunkenTech';
+    src: url(/assets/font/FontsFree-Net-Bunken-Tech-Sans-SC-Wide-W01Bd-4.ttf);
+}
+
+body {
+    display: flex;
+    background-color: #662f10;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+.screen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-width: 1000px;
+    max-height: 600px;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1000px;
+    max-height: 600px;
+
+    &.disabled {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+
+.screen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-width: 1000px;
+    max-height: 600px;
+}
+
+.disabled {
+    display: none;
+    visibility: hidden;
+}
+
+
+.judul {
+    text-align: center;
+    margin: 10px 0;
+}
+.info {
+    text-align: center;
+}
+.popup {
+    width: 400px;
+    background-color: rgb(54, 49, 49);
+    position: absolute;
+    top: 10;
+    height: fit-content;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+    gap: 10px;
+
+}
+.container-button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#restart, #exit {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#popup-over img{
+      width: 20px;
+}

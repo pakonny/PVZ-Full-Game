@@ -1,0 +1,118 @@
+#state-lobby {
+    display: flex;
+    gap: 60px;
+
+    .credential-box {
+        .logo {
+            margin-bottom: 32px;
+        }
+
+        .form {
+            width: 100%;
+            gap: 6px;
+        }
+
+        .input-box {
+            position: relative;
+            border: 0;
+            border-radius: 8px;
+            background-color: #9c572f;
+            border: 4.5px solid #9c572f;
+        }
+
+        .input-box input, .input-box select {
+            background-color: #44200a;
+            border-radius: 6px;
+            border: 0;
+            padding: 10px;
+            font-size: 18px;
+            color: white;
+            z-index: 1;
+            width: 100%;
+            outline: 0;
+        }
+
+        .input-box input::placeholder {
+            color: white;
+        }
+
+        .input-box select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-color: #44200a;
+            background-repeat: no-repeat;
+            background-position-x: 98%;
+            background-position-y: 50%;
+        }
+
+        .action-box {
+            .button-playgame {
+                background-color: #098501;
+                border: 0;
+                padding: 6px 20px;
+                border-radius: 8px;
+                color: white;
+                font-weight: 1000;
+                font-size: 20px;
+                gap: 6px;
+
+                &:not(:disabled):hover {
+                    background-color: #0a850199;
+                }
+
+                &:disabled {
+                    background-color: #065800;
+                }
+            }
+
+            .button-playgame img {
+                width: 34px;
+            }
+
+            .button-instruction {
+                background-color: #fff601;
+                border: 0;
+                padding: 6px 20px;
+                border-radius: 8px;
+                color: #662f10;
+                font-weight: 1000;
+                font-size: 20px;
+
+                &:hover {
+                    background-color: #fff70199;
+                }
+            }
+        }
+    }
+
+    .instruction-box {
+        display: none;
+        position: relative;
+        background-color: #44200a;
+        color: white;
+        width: 500px;
+        padding: 30px;
+
+        .box {
+            margin-top: 18px;
+            gap: 8px;
+        }
+
+        .button-close {
+            position: absolute;
+            top: 10px;
+            right: 4px;
+            background-color: transparent;
+            border: 0;
+            width: 40px;
+        }
+
+        &.enabled {
+            display: block;
+        }
+    }
+}
+
