@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/library.css">
+    <link rel="stylesheet" href="styles/lobby.css">
+    <link rel="stylesheet" href="styles/playing.css">
+    <title>LKS - PvZ Timer</title>
+</head>
+<body>
+    <div class="screen">
+        <div class="container disabled" id="state-playing">
+            <div class="game-container" >
+                <div class="countdown-container">
+                    <h1 id="countdown">3</h1>
+                </div>
+                <div class="overlay">
+                    <div style="position: relative; width: 100%; height: 100%;">
+                        <div class="seeds-container flex">
+                            <button class="seed sunflower disabled">
+                                <img class="image" src="assets/Seeds/SunFlowerSeed.png" alt="" >
+                            </button>
+                            <button class="seed wallnut">
+                                <img class="image" src="assets/Seeds/WallNutSeed.png" alt="" >
+                            </button>
+                            <button class="seed peashooter">
+                                <img class="image" src="assets/Seeds/PeaShooterSeed.png" alt="" >
+                            </button>
+                            <button class="seed icepeashooter">
+                                <img class="image" src="assets/Seeds/IcePeaSeed.png" alt="" >
+                            </button>
+                        </div>
+                        <span class="sun-display">50</span>
+                        <div class="info-display flex flex-vertical" >
+                            <span class="username-display">username</span>
+                            <span>Score  :  <span class="score-display">0</span></span>
+                            <span>Time   :  <span class="time-display">00:00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <img class="background" src="assets/General/Background.jpg" alt="" />
+                <canvas class="game-board"></canvas>
+            </div>
+            <div class="leaderboard">
+                <div class="actual-container">
+                    <h2>LEADERBOARD</h2>
+                    <label>
+                        <select name="sorter" id="sorter">
+                            <option value="byScore">Sort By Score</option>
+                            <option value="byName">Sort By Username</option>
+                        </select>
+                    </label>
+                    <div class="items-container">
+                        <div class="item">
+                            <div class="text">
+                                <strong>username_here</strong>
+                                <span>Score: 999</span>
+                            </div>
+                            <button class="view-detail">Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="state-lobby">
+            <div class="credential-box flex flex-vertical">
+                <img src="/assets/General/logo.png" class="logo" alt="" >
+                <div class="flex flex-align-center flex-vertical" style="padding: 0 16px;">
+                    <div class="form flex flex-vertical">
+                        <div class="input-box">
+                            <label>
+                                <input
+                                    class="input-username"
+                                    name="username"
+                                    placeholder="Input Username"
+                                >
+                            </label>
+                        </div>
+                        <div class="input-box">
+                            <label>
+                                <select name="level" class="input-level">
+                                    <option value="" disabled selected>Select Level</option>
+                                    <option value="1">Easy</option>
+                                    <option value="2">Medium</option>
+                                    <option value="3">Hard</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="action-box flex" style="gap: 8px; margin-top: 8px;">
+                        <button class="flex flex-align-center button-playgame" disabled>
+                            <img src="assets/General/Shovel.png" alt="">
+                            Play Game
+                        </button>
+                        <button class="flex flex-align-center button-instruction">
+                            Instruction
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="instruction-box">
+                <h2>How to play game</h2>
+                <button class="button-close">
+                    <img src="assets/General/close-icon.png" style="width: 100%; height: 100%;"  alt=""/>
+                </button>
+                <div class="box flex flex-vertical">
+                    <span>1. Input Username</span>
+                    <span>2. Take the sun to choose the plant card</span>
+                    <span>3. Put a plant cards into the field to fight zombies</span>
+                    <span>4. Don't let zombies through the yard</span>
+                    <span>5. Enjoy!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="popup-over" class="popup disabled">
+        <div>
+            <h1 class="judul">Game Over</h1>
+        </div>
+        <div class="info">
+            <div id="player-name-over">Player name : Rafi</div>
+            <div id="score-player">Score : 40</div>
+        </div>
+        <div class="container-button">
+             <button id="restart-over">Restart</button>
+             <button id="exit">Exit</button>
+        </div>
+    </div>
+
+    <div id="popup-paused" class="popup disabled">
+        <div>
+            <h1 class="judul">Game Paused</h1>
+        </div>
+        <div class="info">
+            <div id="player-name-paused">Player name : Rafi</div>
+        </div>
+        <div class="container-button">
+            <button id="continue">Continue</button>
+            <button id="restart-paused">Restart</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/lobby.js"></script>
+    <script type="module" src="js/playing.js"></script>
+</body>
+</html>
